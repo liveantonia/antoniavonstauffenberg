@@ -3,7 +3,7 @@
    ===================================================== */
 
 /* ---------- Google Fonts ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
 
 /* ---------- CSS Custom Properties ---------- */
 :root {
@@ -70,7 +70,7 @@ a:hover {
 
 /* ---------- Typography ---------- */
 h1, h2, h3, h4 {
-  font-family: 'Pacifico', cursive;
+  font-family: 'La Belle Aurore', cursive;
   color: var(--hot-pink);
   line-height: 1.2;
 }
@@ -106,7 +106,7 @@ p {
 }
 
 .navbar-brand {
-  font-family: 'Pacifico', cursive;
+  font-family: 'La Belle Aurore', cursive;
   font-size: 1.4rem;
   color: var(--hot-pink);
   letter-spacing: 0.01em;
@@ -447,7 +447,7 @@ footer p {
 }
 
 footer .footer-name {
-  font-family: 'Pacifico', cursive;
+  font-family: 'La Belle Aurore', cursive;
   color: var(--hot-pink);
 }
 
@@ -590,7 +590,7 @@ footer .footer-name {
 }
 
 .pub-year-label {
-  font-family: 'Pacifico', cursive;
+  font-family: 'La Belle Aurore', cursive;
   color: var(--hot-pink);
   font-size: 1.4rem;
   margin-bottom: 1.2rem;
