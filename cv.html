@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV — Antonia von Stauffenberg</title>
+  <meta name="description" content="Curriculum Vitae of Antonia von Stauffenberg, astrophysicist." />
+  <link rel="stylesheet" href="css/style.css" />
+  <script>
+    (function () {
+      const t = localStorage.getItem('avs-theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ===== Navigation ===== -->
+  <nav class="navbar" aria-label="Main navigation">
+    <a class="navbar-brand" href="index.html">AVS</a>
+
+    <ul class="navbar-links" id="navbar-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="publications.html">Publications</a></li>
+    </ul>
+
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <button
+        class="theme-toggle"
+        id="theme-toggle"
+        aria-label="Toggle dark mode"
+        title="Toggle light / dark mode"
+      >
+        <span class="toggle-icon">🌙</span>
+      </button>
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="navbar-links"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== Page wrapper ===== -->
+  <div class="page-wrapper">
+
+    <!-- CV Header -->
+    <div class="cv-header">
+      <p class="section-label" style="text-align:center;">Curriculum Vitae</p>
+      <h1>My CV</h1>
+      <p>Upload your PDF below, or replace <code>images/cv.pdf</code> to display it automatically.</p>
+    </div>
+
+    <!-- CV Content -->
+    <div class="cv-embed-wrapper">
+
+      <!-- Upload area (shown when no PDF is embedded) -->
+      <div class="cv-upload-area" id="upload-area">
+        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24"
+             fill="none" stroke="var(--hot-pink)" stroke-width="1.5"
+             stroke-linecap="round" stroke-linejoin="round"
+             style="margin:0 auto 1.5rem;">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="12" y1="12" x2="12" y2="18"/>
+          <line x1="9" y1="15" x2="15" y2="15"/>
+        </svg>
+        <h3>Upload your CV</h3>
+        <p>Drag and drop a PDF here, or click the button below to browse.</p>
+        <label class="btn btn-primary" style="cursor:pointer;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2.5"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="17 8 12 3 7 8"/>
+            <line x1="12" y1="3" x2="12" y2="15"/>
+          </svg>
+          Choose PDF
+          <input type="file" id="cv-upload" accept="application/pdf"
+                 style="display:none;" aria-label="Upload CV PDF" />
+        </label>
+
+        <p style="margin-top:1.5rem;font-size:0.8rem;opacity:0.6;">
+          Alternatively, place your CV at <code>images/cv.pdf</code> and it will load automatically.
+        </p>
+      </div>
+
+      <!-- PDF viewer (hidden until a file is selected) -->
+      <div id="viewer-section" style="display:none;">
+        <div style="display:flex;justify-content:flex-end;gap:0.8rem;margin-bottom:1rem;">
+          <button
+            class="btn btn-outline"
+            onclick="document.getElementById('viewer-section').style.display='none';
+                     document.getElementById('upload-area').style.display='block';"
+          >
+            Replace PDF
+          </button>
+          <a class="btn btn-primary" id="download-btn" href="#" download>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="2.5"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Download
+          </a>
+        </div>
+        <iframe
+          id="pdf-frame"
+          class="pdf-viewer"
+          title="CV PDF viewer"
+          src=""
+        ></iframe>
+      </div>
+
+    </div><!-- /cv-embed-wrapper -->
+
+    <footer>
+      <p>
+        &copy; <span id="year"></span>
+        <span class="footer-name">Antonia von Stauffenberg</span>
+        &nbsp;·&nbsp; All rights reserved
+      </p>
+    </footer>
+  </div><!-- /page-wrapper -->
+
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Auto-load cv.pdf if it exists in images/
+    (function () {
+      const frame = document.getElementById('pdf-frame');
+      const uploadArea = document.getElementById('upload-area');
+      const viewerSection = document.getElementById('viewer-section');
+      // Try fetching the PDF silently
+      fetch('images/cv.pdf', { method: 'HEAD' })
+        .then(res => {
+          if (res.ok) {
+            frame.src = 'images/cv.pdf';
+            uploadArea.style.display = 'none';
+            viewerSection.style.display = 'block';
+            const dl = document.getElementById('download-btn');
+            if (dl) { dl.href = 'images/cv.pdf'; dl.download = 'cv.pdf'; }
+          }
+        })
+        .catch(() => { /* file not present — show upload area */ });
+    })();
+  </script>
+</body>
+</html>

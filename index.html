@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Antonia von Stauffenberg — Astrophysicist</title>
+  <meta name="description" content="Personal website of Antonia von Stauffenberg, astrophysicist." />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Preload theme to prevent flash -->
+  <script>
+    (function () {
+      const t = localStorage.getItem('avs-theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ===== Navigation ===== -->
+  <nav class="navbar" aria-label="Main navigation">
+    <a class="navbar-brand" href="index.html">AVS</a>
+
+    <ul class="navbar-links" id="navbar-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="publications.html">Publications</a></li>
+    </ul>
+
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <button
+        class="theme-toggle"
+        id="theme-toggle"
+        aria-label="Toggle dark mode"
+        title="Toggle light / dark mode"
+      >
+        <span class="toggle-icon">🌙</span>
+      </button>
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="navbar-links"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== Hero / Scroll Header ===== -->
+  <section class="hero" aria-label="Introduction">
+    <div class="hero-bg" role="img" aria-label="Deep-sky astronomical image"></div>
+    <div class="hero-content">
+      <h1>Antonia von Stauffenberg</h1>
+      <p class="subtitle">
+        Astrophysicist &nbsp;·&nbsp; Exploring the universe, one data point at a time
+      </p>
+      <a href="#about" class="btn btn-primary" style="margin:0 auto;">
+        About me
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </a>
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <span>Scroll</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+             fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== About ===== -->
+  <section class="section" id="about">
+    <div class="section-inner">
+      <p class="section-label">About me</p>
+      <div class="about-grid">
+
+        <div class="about-photo">
+          <img
+            src="images/portrait.jpg"
+            alt="Portrait of Antonia von Stauffenberg"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+          />
+          <!-- Placeholder shown when no photo is uploaded -->
+          <div style="display:none;width:100%;max-width:420px;aspect-ratio:3/4;
+                      background:var(--bg-secondary);border:1px solid var(--border-color);
+                      border-radius:4px;align-items:center;justify-content:center;
+                      flex-direction:column;gap:0.5rem;color:var(--text-secondary);font-size:0.85rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                 style="opacity:0.4;">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+            <span style="opacity:0.5;">Add portrait.jpg to /images</span>
+          </div>
+        </div>
+
+        <div class="about-text">
+          <h2>Hello, I'm Antonia</h2>
+          <div class="divider"></div>
+          <p>
+            I am an astrophysicist with a passion for unravelling the large-scale structure
+            of the cosmos. My research spans observational cosmology, galaxy formation, and
+            the interplay between dark matter and baryonic physics.
+          </p>
+          <p>
+            Whether I'm analysing survey data from ground-based telescopes or running
+            hydrodynamic simulations, I am driven by the same question: <em>how did the
+            universe come to look the way it does?</em>
+          </p>
+          <p>
+            When I'm not chasing photons, you'll find me mentoring students, writing
+            outreach pieces, or hiking somewhere with a good view of the night sky.
+          </p>
+
+          <div class="about-meta">
+            <span class="meta-tag">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              Your Institution, City, Country
+            </span>
+            <span class="meta-tag">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3z"/>
+                <path d="M8 17v1a4 4 0 0 0 8 0v-1"/>
+              </svg>
+              Observational Cosmology
+            </span>
+            <span class="meta-tag">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+              Galaxy Formation
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Research Banner (parallax) ===== -->
+  <div class="research-banner" aria-label="Research highlight">
+    <div class="research-banner-bg" role="img" aria-label="Astronomical research image"></div>
+    <div class="research-banner-content">
+      <h2>Mapping the Cosmos</h2>
+      <p>
+        From the cosmic web to the smallest dwarf galaxies, my work connects
+        theory and observation to build a coherent picture of structure formation
+        across cosmic time.
+      </p>
+    </div>
+  </div>
+
+  <!-- ===== Quick Links ===== -->
+  <section class="section" id="links">
+    <div class="section-inner">
+      <p class="section-label">Explore</p>
+      <h2>What would you like to see?</h2>
+      <div class="divider"></div>
+
+      <div class="cards-grid">
+
+        <a href="cv.html" class="card">
+          <div class="card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10 9 9 9 8 9"/>
+            </svg>
+          </div>
+          <h3>Curriculum Vitae</h3>
+          <p>My academic background, positions, awards, and teaching experience.</p>
+        </a>
+
+        <a href="publications.html" class="card">
+          <div class="card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+          </div>
+          <h3>Publications</h3>
+          <p>Peer-reviewed papers, preprints, and conference proceedings.</p>
+        </a>
+
+        <a href="mailto:your.email@institution.edu" class="card">
+          <div class="card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <h3>Get in Touch</h3>
+          <p>Interested in collaboration or have a question? Drop me a line.</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>
+      &copy; <span id="year"></span>
+      <span class="footer-name">Antonia von Stauffenberg</span>
+      &nbsp;·&nbsp; All rights reserved
+    </p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

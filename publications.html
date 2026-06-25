@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publications — Antonia von Stauffenberg</title>
+  <meta name="description" content="Publications list of Antonia von Stauffenberg, astrophysicist." />
+  <link rel="stylesheet" href="css/style.css" />
+  <script>
+    (function () {
+      const t = localStorage.getItem('avs-theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ===== Navigation ===== -->
+  <nav class="navbar" aria-label="Main navigation">
+    <a class="navbar-brand" href="index.html">AVS</a>
+
+    <ul class="navbar-links" id="navbar-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="publications.html">Publications</a></li>
+    </ul>
+
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <button
+        class="theme-toggle"
+        id="theme-toggle"
+        aria-label="Toggle dark mode"
+        title="Toggle light / dark mode"
+      >
+        <span class="toggle-icon">🌙</span>
+      </button>
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="navbar-links"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== Page wrapper ===== -->
+  <div class="page-wrapper">
+
+    <!-- Publications Header -->
+    <div class="pub-header" style="padding-top:3rem;">
+      <p class="section-label" style="text-align:center;">Research output</p>
+      <h1>Publications</h1>
+      <div class="divider" style="margin:1rem auto 0.5rem;"></div>
+      <p style="text-align:center;margin:0 auto;">
+        Peer-reviewed articles, preprints, and proceedings.
+        Author names in <strong style="color:var(--hot-pink);">pink</strong> indicate first/corresponding authorship.
+      </p>
+    </div>
+
+    <!-- Publications List -->
+    <div class="pub-container">
+
+      <!-- Filters -->
+      <div class="pub-filters" role="group" aria-label="Filter publications by type">
+        <button class="pub-filter-btn active" data-filter="all">All</button>
+        <button class="pub-filter-btn" data-filter="journal">Journal articles</button>
+        <button class="pub-filter-btn" data-filter="preprint">Preprints</button>
+        <button class="pub-filter-btn" data-filter="proceedings">Proceedings</button>
+      </div>
+
+      <!-- -------- 2024 -------- -->
+      <div class="pub-year-group" id="year-2024">
+        <p class="pub-year-label">2024</p>
+
+        <div class="pub-item" data-type="journal">
+          <p class="pub-title">
+            <a href="#" target="_blank" rel="noopener">
+              The Large-Scale Structure of the Local Universe: New Constraints from Photometric Surveys
+            </a>
+          </p>
+          <p class="pub-authors">
+            <strong>von Stauffenberg, A.</strong>, Collaborator B., Collaborator C.
+          </p>
+          <p class="pub-journal">The Astrophysical Journal, 970, 42</p>
+          <div class="pub-badges">
+            <span class="badge badge-pink">First author</span>
+            <span class="badge badge-gray">DOI: 10.XXXX/apj.XXXX</span>
+          </div>
+        </div>
+
+        <div class="pub-item" data-type="preprint">
+          <p class="pub-title">
+            <a href="#" target="_blank" rel="noopener">
+              Hydrodynamic Simulations of Feedback-Regulated Galaxy Formation at High Redshift
+            </a>
+          </p>
+          <p class="pub-authors">
+            Collaborator A., <strong>von Stauffenberg, A.</strong>, Collaborator D.
+          </p>
+          <p class="pub-journal">arXiv:2405.XXXXX [astro-ph.GA]</p>
+          <div class="pub-badges">
+            <span class="badge badge-gray">Preprint</span>
+            <span class="badge badge-gray">arXiv:2405.XXXXX</span>
+          </div>
+        </div>
+
+      </div><!-- /year-2024 -->
+
+      <!-- -------- 2023 -------- -->
+      <div class="pub-year-group" id="year-2023">
+        <p class="pub-year-label">2023</p>
+
+        <div class="pub-item" data-type="journal">
+          <p class="pub-title">
+            <a href="#" target="_blank" rel="noopener">
+              Dark Matter Halo Profiles in Cluster-Mass Systems: A Weak-Lensing Analysis
+            </a>
+          </p>
+          <p class="pub-authors">
+            <strong>von Stauffenberg, A.</strong>, Collaborator E., Collaborator F., Collaborator G.
+          </p>
+          <p class="pub-journal">Monthly Notices of the Royal Astronomical Society, 525, 1234–1256</p>
+          <div class="pub-badges">
+            <span class="badge badge-pink">First author</span>
+            <span class="badge badge-gray">DOI: 10.XXXX/mnras.XXXX</span>
+          </div>
+        </div>
+
+        <div class="pub-item" data-type="proceedings">
+          <p class="pub-title">
+            <a href="#" target="_blank" rel="noopener">
+              Mapping the Baryon Cycle with Next-Generation Spectroscopic Surveys
+            </a>
+          </p>
+          <p class="pub-authors">
+            <strong>von Stauffenberg, A.</strong>, Collaborator H.
+          </p>
+          <p class="pub-journal">
+            Proceedings of the IAU Symposium on Galaxy Evolution, Vol. 376, pp. 55–58
+          </p>
+          <div class="pub-badges">
+            <span class="badge badge-pink">First author</span>
+            <span class="badge badge-gray">Proceedings</span>
+          </div>
+        </div>
+
+      </div><!-- /year-2023 -->
+
+      <!-- -------- 2022 -------- -->
+      <div class="pub-year-group" id="year-2022">
+        <p class="pub-year-label">2022</p>
+
+        <div class="pub-item" data-type="journal">
+          <p class="pub-title">
+            <a href="#" target="_blank" rel="noopener">
+              Constraints on Warm Dark Matter from the Milky Way Satellite Population
+            </a>
+          </p>
+          <p class="pub-authors">
+            Collaborator I., Collaborator J., <strong>von Stauffenberg, A.</strong>
+          </p>
+          <p class="pub-journal">Physical Review D, 106, 123512</p>
+          <div class="pub-badges">
+            <span class="badge badge-gray">DOI: 10.XXXX/PhysRevD.XXXX</span>
+          </div>
+        </div>
+
+      </div><!-- /year-2022 -->
+
+      <!-- -------- Note -------- -->
+      <p style="font-size:0.85rem;color:var(--text-secondary);margin-top:2rem;text-align:center;">
+        For a full and up-to-date list, see my
+        <a href="https://ui.adsabs.harvard.edu/" target="_blank" rel="noopener">NASA/ADS profile</a>
+        or
+        <a href="https://arxiv.org/" target="_blank" rel="noopener">arXiv</a>.
+      </p>
+
+    </div><!-- /pub-container -->
+
+    <footer>
+      <p>
+        &copy; <span id="year"></span>
+        <span class="footer-name">Antonia von Stauffenberg</span>
+        &nbsp;·&nbsp; All rights reserved
+      </p>
+    </footer>
+  </div><!-- /page-wrapper -->
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
