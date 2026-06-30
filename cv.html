@@ -59,37 +59,6 @@
     <!-- CV Content -->
     <div class="cv-embed-wrapper">
 
-      <!-- Upload area (shown when no PDF is embedded) -->
-      <div class="cv-upload-area" id="upload-area">
-        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24"
-             fill="none" stroke="var(--hot-pink)" stroke-width="1.5"
-             stroke-linecap="round" stroke-linejoin="round"
-             style="margin:0 auto 1.5rem;">
-          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-          <polyline points="14 2 14 8 20 8"/>
-          <line x1="12" y1="12" x2="12" y2="18"/>
-          <line x1="9" y1="15" x2="15" y2="15"/>
-        </svg>
-        <h3>Upload your CV</h3>
-        <p>Drag and drop a PDF here, or click the button below to browse.</p>
-        <label class="btn btn-primary" style="cursor:pointer;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-               fill="none" stroke="currentColor" stroke-width="2.5"
-               stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-            <polyline points="17 8 12 3 7 8"/>
-            <line x1="12" y1="3" x2="12" y2="15"/>
-          </svg>
-          Choose PDF
-          <input type="file" id="cv-upload" accept="application/pdf"
-                 style="display:none;" aria-label="Upload CV PDF" />
-        </label>
-
-        <p style="margin-top:1.5rem;font-size:0.8rem;opacity:0.6;">
-          Alternatively, place your CV at <code>images/cv.pdf</code> and it will load automatically.
-        </p>
-      </div>
-
       <!-- PDF viewer (hidden until a file is selected) -->
       <div id="viewer-section" style="display:none;">
         <div style="display:flex;justify-content:flex-end;gap:0.8rem;margin-bottom:1rem;">
