@@ -60,11 +60,9 @@
     <div class="cv-embed-wrapper">
 
       <!-- PDF viewer (hidden until a file is selected) -->
-      <div id="viewer-section" style="display:none;">
-        <div style="display:flex;justify-content:flex-end;gap:0.8rem;margin-bottom:1rem;">
-          <button
-          </button>
-          <a class="btn btn-primary" id="download-btn" href="#" download>
+      <div id="viewer-section" class="cv-viewer-section" style="display:none;">
+        <div class="cv-actions">
+          <a class="btn cv-download-btn" id="download-btn" href="#" download>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                  fill="none" stroke="currentColor" stroke-width="2.5"
                  stroke-linecap="round" stroke-linejoin="round">
@@ -101,16 +99,14 @@
     // Auto-load cv.pdf if it exists in images/
     (function () {
       const frame = document.getElementById('pdf-frame');
-      const uploadArea = document.getElementById('upload-area');
       const viewerSection = document.getElementById('viewer-section');
+      const dl = document.getElementById('download-btn');
       // Try fetching the PDF silently
       fetch('images/cv.pdf', { method: 'HEAD' })
         .then(res => {
           if (res.ok) {
             frame.src = 'images/cv.pdf';
-            uploadArea.style.display = 'none';
             viewerSection.style.display = 'block';
-            const dl = document.getElementById('download-btn');
             if (dl) { dl.href = 'images/cv.pdf'; dl.download = 'cv.pdf'; }
           }
         })
